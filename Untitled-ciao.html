@@ -1,0 +1,98 @@
+<html lang="it">
+
+<meta charset="UTF-8">
+<meta name="author" content="Greco Lorenzo">
+<meta name="description" content="JavaScript">
+<meta name="keywords" content="Java, Script, java, script">
+<meta name="data di crezionone" content="21/09/2026">
+<meta neme="Data ultima revisione" content="21/09/2026">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> JavaScript </title>
+
+<link rel="stylesheet"
+      type="text/css"
+      href="dado.css">
+
+<link rel="icon"
+      type="image/png"
+      href="sei.png">
+
+<script>
+
+
+    function gattx(){
+        var quantita = window.prompt("inserire quanti numeri positivi si vuole inserire: ");
+        var i = 0;
+        var min = 9999999;
+        var max = -9999999;
+
+         if (quantita.toLowerCase() === "gaster"){
+            document.getElementById("g").src = "https://upload.wikimedia.org/wikipedia/en/2/29/Wdgaster.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original";
+            return;
+        }
+
+        if (quantita.toLowerCase() === "riddle"){
+            document.getElementById("g").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz7tGJ-7YauwqEAFXrI0wCyTbdvIS5pSzVCoFZ-T39UA&s=10";
+            return;
+        }
+
+         if (quantita.toLowerCase() === "onceler"){
+            document.getElementById("g").src = "https://i.pinimg.com/1200x/a7/c8/72/a7c87214a758f9740910fb69f73128d4.jpg";
+            return;
+         }
+
+        if (isNaN(quantita) || quantita <= 0){
+            alert("inserire un numero maggiore di 0");
+            location.reload();
+            return;
+        }
+
+       
+
+        while (i<quantita){
+            var num = parseInt(window.prompt("inserisci un numero: "));
+            i = i + 1;
+            if(isNaN(num) || num < 0){
+                  alert("inserire un numero maggiore di 0")
+                  location.reload();
+                  return;
+            }
+            else{
+            if (num <= min){
+                  min = num;
+            }
+
+            if (num >= max){
+                  max = num;
+            }
+      }
+
+
+        }
+
+        document.getElementById("numero").innerHTML = "il numero piu piccolo è " + min + " e il numero piu grande è " + max
+
+
+    }
+
+
+        
+
+
+</script>
+
+</head>
+
+<body>
+
+      <h2> NUMERO PIU PICCOLO </h2>
+
+      <button onclick ="gattx()"> cliccami </button>
+
+      <p id="numero"></p>
+
+      <img id="g">
+
+
+
